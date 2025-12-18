@@ -1,0 +1,22 @@
+[package]
+authors = ["Dmitry Fedorov <fedorov.dmitriy.i@gmail.com>"]
+edition = "2021"
+name    = "cpp"
+version = "0.22.3-dev.0"
+
+[lib]
+name = "tokenizers"
+crate-type = ["cdylib"]
+
+
+[build-dependencies]
+cbindgen    = "0.29.2"
+
+[dependencies]
+cbindgen    = "0.29.2"
+serde       = { version = "1.0.163", features = ["derive"] }
+tokenizers  = { path = "../../tokenizers/", features = ["http"] }
+ahash = { version = "0.8.11", features = ["serde"] }
+
+[profile.release]
+lto = true
