@@ -26,7 +26,7 @@ void Tokenizer::from_pretrained(const std::string& identifier) {
   }
 }
 
-Encoding Tokenizer::encode(const std::string& input) {
+Encoding Tokenizer::encode(const std::string& input) const {
   if (tokenizer_c_ptr == nullptr) {
     throw std::runtime_error("Tokenizer not initialized");
   }

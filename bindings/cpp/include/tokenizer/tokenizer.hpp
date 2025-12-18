@@ -55,7 +55,7 @@ class TOKENIZER_API Tokenizer {
    * @brief tokenize input text
    * @param input input string
    */
-  Encoding encode(const std::string& input);
+  Encoding encode(const std::string& input) const;
 
  private:
   void* tokenizer_c_ptr = nullptr;
